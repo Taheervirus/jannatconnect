@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jannat Connect | Starlink Internet in Jibia, Katsina</title>
+<meta name="description" content="Jannat Connect provides Starlink wireless internet. Pay and get connected. Based in Jibia, Katsina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0e1f3f;
+  --night-2:#16305f;
+  --sky:#eef4fb;
+  --white:#ffffff;
+  --signal:#f5a524;
+  --signal-dark:#c77d06;
+  --text:#1b2a45;
+  --muted:#52607a;
+  --line:#d5e0ef;
+  --head:'Sora','Segoe UI',Arial,sans-serif;
+  --body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--text);background:var(--white);line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:var(--head);line-height:1.2;color:var(--night)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+section{padding:5rem 0}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:var(--night);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--head);font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:.01em}
+.brand span{color:var(--signal)}
+nav ul{display:flex;gap:1.75rem;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:.98rem;opacity:.9}
+nav a:hover{opacity:1;color:var(--signal)}
+nav .btn-nav{background:var(--signal);color:var(--night);padding:.5rem 1.1rem;border-radius:999px;opacity:1}
+nav .btn-nav:hover{color:var(--night);background:#ffb94a}
+#menu{display:none}
+.burger{display:none;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger i{display:block;width:24px;height:2px;background:#fff}
+
+/* Hero */
+.hero{background:var(--night);color:#fff;padding:4.5rem 0 5.5rem;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.2rem,5.2vw,3.7rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.2rem}
+.hero p{max-width:34rem;color:#c9d6ee;font-size:1.15rem;margin-bottom:2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.9rem 1.6rem;border-radius:999px;border:2px solid transparent;transition:background .2s,color .2s}
+.btn-primary{background:var(--signal);color:var(--night)}
+.btn-primary:hover{background:#ffb94a}
+.btn-ghost{border-color:#6f86b3;color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--night)}
+
+/* Signal rings: the one memorable element */
+.signal{position:relative;aspect-ratio:1;width:min(100%,380px);margin-inline:auto}
+.signal .ring{position:absolute;inset:0;margin:auto;border:2px solid rgba(245,165,36,.55);border-radius:50%;animation:pulse 4s ease-out infinite}
+.signal .ring:nth-child(1){width:30%;height:30%}
+.signal .ring:nth-child(2){width:55%;height:55%;animation-delay:.8s}
+.signal .ring:nth-child(3){width:80%;height:80%;animation-delay:1.6s}
+.signal .ring:nth-child(4){width:100%;height:100%;animation-delay:2.4s}
+.signal .dot{position:absolute;inset:0;margin:auto;width:46px;height:46px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 8px rgba(245,165,36,.25)}
+.signal .place{position:absolute;left:50%;bottom:-2.2rem;transform:translateX(-50%);font-family:var(--head);font-size:.9rem;color:#c9d6ee;white-space:nowrap}
+@keyframes pulse{0%{opacity:0;transform:scale(.7)}30%{opacity:1}100%{opacity:.15;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.signal .ring{animation:none;opacity:.7}html{scroll-behavior:auto}}
+
+/* Sections */
+.title{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-bottom:1rem}
+.lead{color:var(--muted);max-width:40rem;margin-bottom:2.5rem}
+.about{background:var(--white)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about p+p{margin-top:1rem}
+.facts{border-left:4px solid var(--signal);padding-left:1.5rem;display:grid;gap:1.25rem}
+.facts strong{display:block;font-family:var(--head);color:var(--night);font-size:1.1rem}
+.facts span{color:var(--muted)}
+
+.purpose{background:var(--sky)}
+.purpose .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:2rem}
+.panel h3{font-size:1.4rem;margin-bottom:.75rem}
+.panel p{color:var(--muted)}
+.panel.vision{background:var(--night);border-color:var(--night)}
+.panel.vision h3{color:#fff}
+.panel.vision p{color:#c9d6ee}
+
+.services .list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.service{padding:1.6rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:1rem}
+.service svg{width:40px;height:40px;stroke:var(--signal-dark);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.service h3{font-size:1.15rem;margin-bottom:.3rem}
+.service p{color:var(--muted);font-size:1rem}
+
+.contact{background:var(--night);color:#fff}
+.contact .title{color:#fff}
+.contact .lead{color:#c9d6ee}
+.contact .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{border:1px solid #34508a;border-radius:14px;padding:1.6rem;background:var(--night-2)}
+.card h3{color:var(--signal);font-size:1rem;margin-bottom:.5rem}
+.card p,.card a{color:#fff;font-weight:600;overflow-wrap:anywhere;text-decoration:none}
+.card a:hover{text-decoration:underline}
+.contact .cta{margin-top:2.5rem}
+
+footer{background:#0a1730;color:#9fb0d0;text-align:center;padding:1.5rem 0;font-size:.92rem}
+
+/* Tablet and mobile */
+@media (max-width:860px){
+  section{padding:3.5rem 0}
+  .hero .wrap,.about .grid,.purpose .grid,.services .list,.contact .grid{grid-template-columns:1fr}
+  .hero{padding:3rem 0 4.5rem}
+  .signal{width:min(70%,280px);margin-top:1rem}
+  .services .list{gap:0}
+  .burger{display:flex}
+  nav{position:absolute;top:64px;left:0;right:0;background:var(--night);display:none;border-top:1px solid #34508a}
+  nav ul{flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem 1.25rem}
+  nav li a{display:block;padding:.85rem 0}
+  nav .btn-nav{text-align:center;margin-top:.5rem}
+  #menu:checked ~ nav{display:block}
+}
+@media (max-width:420px){
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Jannat <span>Connect</span></a>
+    <input type="checkbox" id="menu" aria-label="Toggle menu">
+    <label class="burger" for="menu" aria-hidden="true"><i></i><i></i><i></i></label>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#purpose">Mission and vision</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a class="btn-nav" href="#contact">Contact us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Pay. Connect. Get online with Starlink.</h1>
+        <p>Jannat Connect brings fast satellite internet to homes, shops and offices in Jibia and beyond. Make your payment and we get you connected.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Get connected</a>
+          <a class="btn btn-ghost" href="#services">See our services</a>
+        </div>
+      </div>
+      <div class="signal" aria-hidden="true">
+        <span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring"></span>
+        <span class="dot"></span>
+        <span class="place">Jibia, Katsina</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap grid">
+      <div>
+        <h2 class="title">About us</h2>
+        <p>Jannat Connect is a wireless internet business built on Starlink satellite technology. We make getting online simple: you pay, and we connect you.</p>
+        <p>Many communities still struggle with slow or unreliable internet. Starlink reaches places where cables and masts do not, and we are here to bring that service close to you, with local support from people you can visit or call.</p>
+      </div>
+      <div class="facts">
+        <div><strong>Starlink powered</strong><span>Satellite internet that works where other networks fall short.</span></div>
+        <div><strong>Simple to start</strong><span>Pay for your connection and we handle getting you online.</span></div>
+        <div><strong>Local team</strong><span>Based in Jibia, Katsina, ready to help in person or by phone.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="purpose" id="purpose">
+    <div class="wrap">
+      <h2 class="title">Mission and vision</h2>
+      <p class="lead">What we do every day, and where we want to take our community.</p>
+      <div class="grid">
+        <div class="panel">
+          <h3>Our mission</h3>
+          <p>To give homes, businesses and institutions reliable, high-speed internet through Starlink, with a payment and connection process that is quick, clear and fair.</p>
+        </div>
+        <div class="panel vision">
+          <h3>Our vision</h3>
+          <p>A connected Katsina, where anyone can study, trade, work and stay in touch with the world, no matter how far they are from the nearest network tower.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2 class="title">Our services</h2>
+      <p class="lead">Everything you need to go from payment to a working connection.</p>
+      <div class="list">
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12a7 7 0 0 1 14 0"/><path d="M8 12a4 4 0 0 1 8 0"/><circle cx="12" cy="12" r="1"/><path d="M12 13v8M8 21h8"/></svg>
+          <div><h3>Starlink internet connection</h3><p>Fast, reliable wireless internet delivered by Starlink for your home, shop or office.</p></div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg>
+          <div><h3>Pay and get connected</h3><p>Pay for your plan and we activate your service, with no long paperwork or waiting around.</p></div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5l4 4L8 20l-5 1 1-5z"/><path d="M13 7l4 4"/></svg>
+          <div><h3>Installation and setup</h3><p>We set up your equipment and Wi-Fi so every room and device you need is covered.</p></div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-6h6v6"/></svg>
+          <div><h3>Home and business plans</h3><p>Connections suited to families, shops, schools, offices and community spaces.</p></div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>
+          <div><h3>Customer support</h3><p>Call or message us when you need help. We will get you back online quickly.</p></div>
+        </div>
+        <div class="service">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><h3>Service you can trust</h3><p>Clear pricing and honest advice, so you know what you are paying for.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="title">Contact us</h2>
+      <p class="lead">Visit us, call us or send an email. We will help you get connected.</p>
+      <div class="grid">
+        <div class="card"><h3>Address</h3><p>Jibia, Katsina State, Nigeria</p></div>
+        <div class="card"><h3>Phone</h3><p><a href="tel:+2348106696424">+234 810 669 6424</a></p></div>
+        <div class="card"><h3>Email</h3><p><a href="mailto:info@jannatconnect.com.ng">info@jannatconnect.com.ng</a></p></div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="tel:+2348106696424">Call now</a>
+        <a class="btn btn-ghost" href="https://wa.me/2348106696424">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr">2026</span> Jannat Connect. All rights reserved.</div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').checked=false;});});</script>
+</body>
+</html>
